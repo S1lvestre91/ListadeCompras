@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-TfSwP6CGfsIHzfQWhYsFamMNt+0lchFSmHQ7tF4f4pYS2Gh3hpvg83Je4oelVYyN" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/75f0181de2.js" crossorigin="anonymous"></script>
+
+  <title>LISTA DE COMPRAS</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <header class="cabecalho">
+    <h1 class="logo">List Feira</h1>
+  </header>
+  <main class="conteudo-page">
+    <div class="total">
+      <i class="fa-solid fa-cart-shopping fa-3sx"></i>
+      <span id="total">R$: 0.00</span>
+      
+    </div>
+    <div class="conteudo-form">
+      <form id="form" class="form" action="">
+        <div class="item-form">
+          <label for="Nome">NOME</label>
+          <input id="Nome" type="text">
+        </div>
+        <div class="item-form">
+          <label for="Qtde">QTDE</label>
+          <input id="Qtde" type="number" minlength="1" maxlength="3" size="3">
+        </div>
+        <div class="item-form">
+          <label for="Preco">PREÇO</label>
+          <input id="Preco" type="number" >
+        </div>
+        <input id="Hdid" type="hidden">
+        <button id="btn" type="submit">Adicionar</button>
+      </form>
+    </div>
+    <div class="content-list">
+      <div class="header-list">
+       <p class="itens">NOME</p>
+       <p class="itens">QDTE</p>
+       <p class="itens">PREÇO</p>
+       <p class="itens">AÇÕES</p>
+      </div>
+      
+      <div id="lista">
+        
+      </div>
+      
+      
+    </div>
+  </main>
+  <!-- Project -->
+  <script src="src/main.js"></script>
+  
+  <script>
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/src/PageOff.js').then(registro =>{
+        console.log(`Registro Realizado com Sucesso ${registro}`)
+      }).catch(error =>{
+        console.log('Erro ao registrar', error)
+      })
+    }
+    
+  </script>
+</body>
+</html>
